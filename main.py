@@ -41,7 +41,17 @@ def main():
             #ctrl + C pour quitter avec Y
             if event.code == "BTN_NORTH":
                 pag.hotkey("ctrl","c")
-            
+            #associer les flèches directionnelles au D-pad
+            if event.code == "ABS_HAT0X":
+                if event.state == 1:
+                    pag.press("right")
+                else:
+                    pag.press("left")
+            if event.code == "ABS_HAT0Y":
+                if event.state == 1:
+                    pag.press("down")
+                else:
+                    pag.press("up")
                 
                 
                 
